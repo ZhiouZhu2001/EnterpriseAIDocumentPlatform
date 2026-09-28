@@ -1,5 +1,6 @@
 # EnterpriseAIDocumentPlatform
 
-## Project specification
+## Project documents
 
-See [enterprise AI project specification](enterprise-ai-project-spec.md) for the project scope, milestones, and acceptance criteria.
+- [Project specification](enterprise-ai-project-spec.md)
+- [Learning tasks and acceptance record](LEARNING_TASKS.md)
