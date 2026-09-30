@@ -1,28 +1,10 @@
 import redis
-from pathlib import Path
 import psycopg
 from fastapi import FastAPI
 from fastapi import HTTPException
-from pydantic import SecretStr
-from pydantic_settings import BaseSettings, SettingsConfigDict
+from app.core.config import get_settings
 
-
-class Settings(BaseSettings):
-    model_config = SettingsConfigDict(
-        env_file=Path(__file__).resolve().parents[2] / ".env",
-        env_file_encoding="utf-8",
-        extra="ignore",
-    )
-
-    db_host: str
-    db_port: int
-    db_user: str
-    db_password: SecretStr
-    db_name: str
-    redis_host: str
-    redis_port: int
-
-settings = Settings()
+settings = get_settings()
 app = FastAPI()
 
 @app.get("/live")

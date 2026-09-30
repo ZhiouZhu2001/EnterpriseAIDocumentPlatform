@@ -15,5 +15,6 @@ cp .env.example .env
 docker compose up -d
 cd backend
 uv sync --locked
+uv run --locked --package backend alembic upgrade head
 uv run uvicorn app.main:app --reload --host 127.0.0.1 --port 39800
 ```
